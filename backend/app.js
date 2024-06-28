@@ -23,7 +23,7 @@ var registerRouter = require('./routes/register');
 
 
 //DB Config
-const DB_URL = process.env.MongoURI;
+const DB_URL = process.en.MongoURI;
 
 //connect to mongo
 //---------------------------------------------
