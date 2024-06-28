@@ -21,7 +21,8 @@ const bookingRoute = require('./routes/routeSelection')
 var registerRouter = require('./routes/register');
 //--------------------------------------------------------
 
-
+require('dotenv').config();
+console.log('MongoURI:', process.env.MongoURI); 
 //DB Config
 const DB_URL = process.env.MongoURI;
 
