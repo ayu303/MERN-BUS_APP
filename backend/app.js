@@ -45,10 +45,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors())
+app.use(cors({
+    origin: 'https://mern-bus-app-client.vercel.app/', // Replace with your frontend URL
+    credentials: true,
+}));
 app.use('/', login);
 app.use('/booking', bookingRoute);
 app.use('/register', registerRouter);  // To register page 
 app.use('/user', passport.authenticate('jwt', { session: false }), loggedInPage); //To Secure Route
-
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 module.exports = app;
