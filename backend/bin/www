@@ -16,10 +16,6 @@ var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 console.log("Server UP and Running at 8080")
 
-/**
- * Create HTTP server.
- */
-
 var server = http.createServer(app);
 
 /**

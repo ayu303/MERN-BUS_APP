@@ -22,7 +22,7 @@ var registerRouter = require('./routes/register');
 //--------------------------------------------------------
 
 require('dotenv').config();
-console.log('MongoURI:', process.env.MongoURI); 
+
 //DB Config
 const DB_URL = process.env.MongoURI;
 
@@ -34,6 +34,7 @@ mongoose.connect(DB_URL, {
 })
     .then(() => {
         console.log("Connected to MongoDB")
+        console.log('MongoURI.........', process.env.MongoURI); 
     })
     .catch(err => {
         throw err
@@ -46,10 +47,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors({
-    origin: 'https://mern-bus-app-client.vercel.app/', // Replace with your frontend URL
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: 'https://localhost:3000/', // Replace with your frontend URL
+//     credentials: true,
+// }));
+app.use(cors());
 app.use('/', login);
 app.use('/booking', bookingRoute);
 app.use('/register', registerRouter);  // To register page 
