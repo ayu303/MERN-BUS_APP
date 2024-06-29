@@ -48,7 +48,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-    origin: 'https://mern-bus-app-client.vercel.app/', // Replace with your frontend URL
+    origin: 'https://mern-bus-app-client.vercel.app', // Replace with your frontend URL
     credentials: true,
 }));
 //app.use(cors());
