@@ -24,7 +24,8 @@
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "vercel": "^34.2.8"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
